@@ -69,6 +69,16 @@ Migrate all db changes:
 rails db:migrate
 ```
 
+### Database Dummy Data
+To make things interesting you may want to pre-load the db with some values using the rails console.  Here is an example of doing so with a few users:
+
+```
+rails console
+irb(main):001:0> me = User.create(:first_name => "Goofy", :last_name => "<unknown>", :email => "goofy@disney.com", :password => "likescake")
+...
+irb(main):002:0> me = User.create(:first_name => "Mickey", :last_name => "Mouse", :email => "mmouse@disney.com", :password => "minnie")
+```
+
 Then startup up the Puma webserver:
 ```
 rails server

@@ -21,6 +21,9 @@ class UsersController < ApplicationController
 
     # Save the object
     if @user.save
+      # Setup a flash message
+      flash[:notice] = "User #{@user.first_name} #{@user.last_name} created successfully."
+
       # If save succeeds, redirect to the index action
       redirect_to(users_path)
     else
@@ -44,6 +47,8 @@ class UsersController < ApplicationController
 
     # Save the object
     if @user.update_attributes(user_params)
+      # Setup a flash message
+      flash[:notice] = "User #{@user.first_name} #{@user.last_name} updated successfully."
       # If save succeeds, redirect to the index action
       redirect_to(user_path(@user))
     else
@@ -61,6 +66,8 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    # Setup a flash message
+    flash[:notice] = "User #{@user.first_name} #{@user.last_name} destroyed successfully. Bruhahahahaha!"
     redirect_to(users_path)
   end
 

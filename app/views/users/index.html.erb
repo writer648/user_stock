@@ -1,3 +1,15 @@
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %><br />
+  </div>
+<% end %>
+
+<% if !flash[:error].blank? %>
+  <div class="error">
+    <%= flash[:error] %><br />
+  </div>
+<% end %>
+
 <div class="users index">
   <h2>Users</h2>
 

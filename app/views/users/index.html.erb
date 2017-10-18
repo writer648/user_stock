@@ -1,2 +1,30 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="users index">
+  <h2>Users</h2>
+
+  <%= link_to("Add New User", 'users/new', :class => 'action new') %><br />
+  <br />
+  <table class="listing" summary="Users list" border=1>
+    <tr class="header">
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Actions</th>
+    </tr>
+    <% @users.each do |subject| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.firstname %></td>
+      <td><%= user.lastname %></td>
+      <td><%= user.email %></td>
+      <td><%= user.password %></td>
+      <td class="actions">
+        <%= link_to("Show", user_path(user), :class => 'action show') %>
+        <%= link_to("Edit", edit_user_path(user), :class => 'action edit') %>
+        <%= link_to("Delete", delete_user_path(user), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

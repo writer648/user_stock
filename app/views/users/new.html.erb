@@ -1,2 +1,32 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<%= link_to("<< Back to List", users_path, :class => 'back-link') %>
+
+<div class="users new">
+  <h2>Create User</h2>
+
+  <%= form_for(@user, :url => users_path, :method => 'post') do |f| %>
+
+    <table summary="User form fields">
+      <tr>
+        <th>First Name</th>
+        <td><%= f.text_field(:first_name) %></td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><%= f.text_field(:last_name) %></td>
+      </tr>
+      <tr>
+        <th>email</th>
+        <td><%= f.text_field(:email) %></td>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td><%= f.text_field(:password) %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= f.submit("Create User") %>
+    </div>
+
+  <% end %>
+</div>

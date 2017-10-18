@@ -60,9 +60,13 @@ Query OK, 1 row affected (0.22 sec)
 Don't forget to grant your user permissions to these databases.
 
 Then back at the command line in the root project folder, run the following:
-
 ```
 rails db:schema:dump
+```
+
+Migrate all db changes:
+```
+rails db:migrate
 ```
 
 Then startup up the Puma webserver:

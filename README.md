@@ -37,7 +37,17 @@ Bundle complete! 16 Gemfile dependencies, 72 gems now installed.
 Use `bundle info [gemname]` to see where a bundled gem is installed.
 ```
 
+You'll also need to install stock_quote gem:
+https://github.com/tyrauber/stock_quote
+
+```
+sudo gem install stock_quote
+```
+
+Due to changes in Yahoo financial API's, some data elements have been deprecated but documentation has not been updated.
+
 ### Configuration
+Coming Soon
 
 ### Database initialization
 
@@ -77,6 +87,7 @@ rails console
 irb(main):001:0> me = User.create(:first_name => "Goofy", :last_name => "<unknown>", :email => "goofy@disney.com", :password => "likescake")
 ...
 irb(main):002:0> me = User.create(:first_name => "Mickey", :last_name => "Mouse", :email => "mmouse@disney.com", :password => "minnie")
+...
 ```
 
 Then startup up the Puma webserver:
@@ -87,9 +98,12 @@ rails server
 go to http://localhost:3000 to see the website.
 
 ### How to run the test suite
+Well, I'd have to write some tests first.  So once that is done then this is Coming Soon
 
 ### Services (job queues, cache servers, search engines, etc.)
+Coming Soon
 
 ### Deployment instructions
+Coming Soon
 
 ###  ...

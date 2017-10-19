@@ -1,0 +1,28 @@
+<div class="stock index">
+  <h2>Stock Search</h2>
+
+  <%= form_tag(method: "put") do %>
+  <%= label_tag(:q, "Enter a single stock symbol:") %><br />
+    <%= text_field_tag("stocksymbol") %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
+  <BR />
+  <BR />
+
+  <% if !flash[:notice].blank? %>
+    <div class="notice">
+      <%= flash[:notice] %><br />
+    </div>
+  <% end %>
+
+  <% if !flash[:error].blank? %>
+    <div class="error">
+      <%= flash[:error] %><br />
+    </div>
+  <% end %>
+  <br />
+  <br />
+  <%= link_to("<< Back to Main Menu", users_path, :class => 'back-link') %>
+
+</div>

@@ -2,6 +2,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.sorted
+    # puts "\r"
+    # puts "\n"
+    # stock = StockQuote::Stock.quote("GOOG")
+    # puts "Google: "
+    # puts stock.ask
     render('index')
   end
 

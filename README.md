@@ -53,6 +53,19 @@ Coming Soon
 
 Please update database login settings at config/database.yml
 
+For Ubuntu, I had to make some changes, as the socket is stored in a different location.  So watch out for that in config/database.yml
+```
+default: &default
+  adapter: mysql2
+  ...
+  socket: /var/run/mysqld/mysqld.sock
+```
+might also want to:
+```
+chmod 640 database.yml
+```
+while you are there.
+
 ### Database creation
 You'll have to make the initial databases
 
